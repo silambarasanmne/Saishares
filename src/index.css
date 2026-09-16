@@ -24,6 +24,10 @@
   font-family: 'Lora', Georgia, serif;
 }
 
+.font-logo {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
 /* Gold Gradient Utilities */
 .text-gold-gradient {
   background: linear-gradient(135deg, #d4a054 0%, #c68d37 50%, #9e6b22 100%);
