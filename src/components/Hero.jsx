@@ -24,7 +24,7 @@ export default function Hero({ onOpenInvestModal, onOpenBrochureModal }) {
             Sai Shares
           </div>
           <div className="relative mt-1">
-            <span className="text-2xl sm:text-3xl font-serif-accent italic text-[#e05a2b] tracking-normal font-semibold flex items-center gap-2">
+            <span className="text-3xl sm:text-4xl font-serif-accent text-[#e05a2b] font-medium tracking-wide flex items-center gap-2">
               WeGrowTogether
               <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#e05a2b] inline-block -mt-2" viewBox="0 0 50 30" fill="none" stroke="currentColor">
                 <path d="M5 25 L35 10 L45 15 M45 15 L45 5 L35 5" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
