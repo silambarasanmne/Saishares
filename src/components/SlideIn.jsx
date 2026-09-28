@@ -1,16 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 /**
- * SlideIn Component
- * Wraps elements and animates them sliding in when scrolled into view.
- * Automatically resets when scrolled away so it smoothly re-animates on return.
- * Uses hardware-accelerated transforms for peak performance.
+ * SlideIn Component — Premium scroll-reveal
+ * Animates elements with blur + translate + opacity on viewport entry.
+ * Uses hardware-accelerated transforms + filter for peak performance.
+ * Resets on exit so it re-triggers cleanly when returning.
  */
 export default function SlideIn({ children, delayMs = 0, className = '', direction = 'left' }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,8 +28,8 @@ export default function SlideIn({ children, delayMs = 0, className = '', directi
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -20px 0px',
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
@@ -38,12 +44,14 @@ export default function SlideIn({ children, delayMs = 0, className = '', directi
   const getTransformValue = () => {
     switch (direction) {
       case 'right':
-        return 'translateX(40px)';
+        return 'translateX(48px)';
       case 'up':
-        return 'translateY(25px)';
+        return 'translateY(32px)';
+      case 'down':
+        return 'translateY(-32px)';
       case 'left':
       default:
-        return 'translateX(-40px)';
+        return 'translateX(-48px)';
     }
   };
 
@@ -53,8 +61,9 @@ export default function SlideIn({ children, delayMs = 0, className = '', directi
       style={{
         transform: isVisible ? 'translate(0, 0)' : getTransformValue(),
         opacity: isVisible ? 1 : 0,
-        transition: `transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) ${isVisible ? delayMs : 0}ms, opacity 0.35s ease-out ${isVisible ? delayMs : 0}ms`,
-        willChange: 'transform, opacity',
+        filter: isVisible ? 'blur(0px)' : 'blur(6px)',
+        transition: `transform 0.7s cubic-bezier(0.32, 0.72, 0, 1) ${isVisible ? delayMs : 0}ms, opacity 0.6s ease-out ${isVisible ? delayMs : 0}ms, filter 0.6s ease-out ${isVisible ? delayMs : 0}ms`,
+        willChange: 'transform, opacity, filter',
       }}
       className={className}
     >

@@ -5,6 +5,7 @@ import StatsSection from './components/StatsSection';
 import TrustedGrowth from './components/TrustedGrowth';
 import ServiceCards from './components/ServiceCards';
 import InvestorGuidance from './components/InvestorGuidance';
+import VideoSection from './components/VideoSection';
 import SuperiorityBanner from './components/SuperiorityBanner';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
@@ -23,7 +24,7 @@ export default function App() {
   const handleCloseBrochureModal = () => setIsBrochureModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-gray-900 flex flex-col font-sans selection:bg-[#c68d37] selection:text-white relative overflow-x-hidden">
+    <div className="noise-overlay min-h-screen bg-white text-gray-900 flex flex-col font-sans selection:bg-[#c68d37] selection:text-white relative overflow-x-hidden">
       {/* Header Navigation Bar */}
       <Header
         activeSection={activeSection}
@@ -51,6 +52,9 @@ export default function App() {
 
         {/* Investor Guidance Section & Candlestick Stock Chart */}
         <InvestorGuidance />
+
+        {/* Share Market Educational Videos Section */}
+        <VideoSection />
 
         {/* Superiority Grid Dark Banner */}
         <SuperiorityBanner onOpenInvestModal={handleOpenInvestModal} />

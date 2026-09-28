@@ -8,7 +8,7 @@ export default function InvestModal({ isOpen, onClose }) {
     name: '',
     phone: '',
     email: '',
-    investmentAmount: '₹50,000 - ₹2,00,000',
+    investmentAmount: '₹1,00,000 - ₹5,00,000',
     message: '',
   });
 
@@ -26,11 +26,11 @@ export default function InvestModal({ isOpen, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/65 backdrop-blur-xl animate-fade-in"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-md glass-panel-light rounded-3xl shadow-2xl border border-white/60 max-h-[90vh] flex flex-col overflow-hidden"
+        className="relative w-full max-w-md glass-panel-light rounded-[1.5rem] shadow-[0_24px_80px_-16px_rgba(0,0,0,0.15)] border border-white/60 max-h-[90vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header with Sticky Close Button */}
@@ -129,16 +129,16 @@ export default function InvestModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, investmentAmount: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300/80 focus:ring-2 focus:ring-[#c68d37] focus:border-[#c68d37] outline-hidden text-sm bg-white/80"
                   >
-                    <option value="₹10,000 - ₹50,000">₹10,000 - ₹50,000</option>
-                    <option value="₹50,000 - ₹2,00,000">₹50,000 - ₹2,00,000</option>
-                    <option value="₹2,00,000 - ₹10,00,000">₹2,00,000 - ₹10,00,000</option>
-                    <option value="Above ₹10,00,000">Above ₹10,00,000</option>
+                    <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000</option>
+                    <option value="₹5,00,000 - ₹10,00,000">₹5,00,000 - ₹10,00,000</option>
+                    <option value="₹10,00,000 - ₹25,00,000">₹10,00,000 - ₹25,00,000</option>
+                    <option value="Above ₹25,00,000">Above ₹25,00,000</option>
                   </select>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-gradient-to-r from-[#c68d37] to-[#d4a054] hover:from-[#b8860b] hover:to-[#c68d37] text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#c68d37] to-[#d4a054] hover:from-[#b8860b] hover:to-[#c68d37] text-white rounded-full font-bold shadow-[0_6px_20px_-4px_rgba(198,141,55,0.4)] hover:shadow-[0_10px_28px_-4px_rgba(198,141,55,0.5)] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-center gap-2 cursor-pointer mt-2 active:scale-[0.98]"
                 >
                   <span>Request Free Advisory Call</span>
                   <TrendingUp className="w-4 h-4" />

@@ -28,11 +28,11 @@ export default function BrochureModal({ isOpen, onClose }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/65 backdrop-blur-xl animate-fade-in"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg glass-panel-light rounded-3xl shadow-2xl border border-white/60 max-h-[90vh] flex flex-col overflow-hidden"
+        className="relative w-full max-w-lg glass-panel-light rounded-[1.5rem] shadow-[0_24px_80px_-16px_rgba(0,0,0,0.15)] border border-white/60 max-h-[90vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header */}
@@ -98,7 +98,7 @@ export default function BrochureModal({ isOpen, onClose }) {
                     download={item.fileName}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-[#c68d37] to-[#d4a054] hover:from-[#b8860b] hover:to-[#c68d37] text-white text-xs font-bold rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-[#c68d37] to-[#d4a054] hover:from-[#b8860b] hover:to-[#c68d37] text-white text-xs font-bold rounded-full shadow-[0_4px_12px_-2px_rgba(198,141,55,0.35)] hover:shadow-[0_6px_18px_-2px_rgba(198,141,55,0.45)] transition-all duration-300 cursor-pointer active:scale-[0.98]"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download PDF</span>

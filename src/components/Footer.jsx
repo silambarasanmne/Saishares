@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 
 export default function Footer({ setActiveSection, onOpenInvestModal, onOpenBrochureModal }) {
   const quickLinks = [
@@ -27,11 +27,14 @@ export default function Footer({ setActiveSection, onOpenInvestModal, onOpenBroc
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#1b191c] via-[#241f22] to-[#2d1e1c] text-white pt-16 pb-12 border-t border-gray-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer className="bg-gradient-to-b from-[#1b191c] via-[#241f22] to-[#2d1e1c] text-white pt-20 pb-14 border-t border-white/6 relative overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#c68d37]/5 blur-[100px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 relative z-10">
         
         {/* Main Footer Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           
           {/* Brand Info & Contact */}
           <div className="md:col-span-6 space-y-6">
@@ -39,42 +42,47 @@ export default function Footer({ setActiveSection, onOpenInvestModal, onOpenBroc
               <Logo />
             </div>
 
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-md">
-              At Sai Shares, we’re committed to helping investors achieve their financial goals through strategic and informed investment decisions.
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md">
+              At Sai Shares, we're committed to helping investors achieve their financial goals through strategic and informed investment decisions.
             </p>
 
-            <div className="space-y-2 text-sm text-gray-200 font-medium">
+            <div className="space-y-3 text-sm font-medium">
               <a 
                 href="tel:+919710220107" 
-                className="flex items-center gap-2 hover:text-[#c68d37] transition-colors"
+                className="flex items-center gap-2.5 text-gray-300 hover:text-[#c68d37] transition-colors duration-300 group"
               >
-                <Phone className="w-4 h-4 text-[#c68d37]" />
+                <span className="w-8 h-8 rounded-lg bg-[#c68d37]/10 border border-[#c68d37]/20 flex items-center justify-center shrink-0">
+                  <Phone className="w-3.5 h-3.5 text-[#c68d37]" />
+                </span>
                 <span>+91 9710220107</span>
               </a>
               <a 
                 href="mailto:Saisharestech@gmail.com" 
-                className="flex items-center gap-2 hover:text-[#c68d37] transition-colors"
+                className="flex items-center gap-2.5 text-gray-300 hover:text-[#c68d37] transition-colors duration-300 group"
               >
-                <Mail className="w-4 h-4 text-[#c68d37]" />
+                <span className="w-8 h-8 rounded-lg bg-[#c68d37]/10 border border-[#c68d37]/20 flex items-center justify-center shrink-0">
+                  <Mail className="w-3.5 h-3.5 text-[#c68d37]" />
+                </span>
                 <span>Saisharestech@gmail.com</span>
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-lg font-bold text-white tracking-wide">
+          <div className="md:col-span-3 space-y-5">
+            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-[0.15em]">
               Quick Links
             </h4>
-            <ul className="space-y-2.5 text-sm text-gray-300">
+            <ul className="space-y-2.5 text-sm text-gray-400">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link)}
-                    className="hover:text-[#c68d37] transition-colors block py-0.5"
+                    className="hover:text-[#c68d37] transition-colors duration-300 block py-0.5 inline-flex items-center gap-1 group"
                   >
-                    {link.name}
+                    <span>{link.name}</span>
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0 group-hover:opacity-60 group-hover:translate-y-0 transition-all duration-300" />
                   </a>
                 </li>
               ))}
@@ -82,18 +90,18 @@ export default function Footer({ setActiveSection, onOpenInvestModal, onOpenBroc
           </div>
 
           {/* Registered By */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-lg font-bold text-white tracking-wide">
+          <div className="md:col-span-3 space-y-5">
+            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-[0.15em]">
               Registered by
             </h4>
-            <div className="space-y-3 text-sm text-gray-300">
-              <div>
-                <span className="block text-gray-400 text-xs uppercase tracking-wider font-semibold">AMFI Regn No :</span>
-                <span className="font-semibold text-white">ARN-341781</span>
+            <div className="space-y-4 text-sm text-gray-400">
+              <div className="p-3.5 rounded-xl bg-white/4 border border-white/6">
+                <span className="block text-[10px] uppercase tracking-[0.15em] font-bold text-gray-500 mb-1">AMFI Regn No</span>
+                <span className="font-bold text-white text-base">ARN-341781</span>
               </div>
-              <div>
-                <span className="block text-gray-400 text-xs uppercase tracking-wider font-semibold">MSME Registration:</span>
-                <span className="font-semibold text-white">UDYAM-TN-02-0339397</span>
+              <div className="p-3.5 rounded-xl bg-white/4 border border-white/6">
+                <span className="block text-[10px] uppercase tracking-[0.15em] font-bold text-gray-500 mb-1">MSME Registration</span>
+                <span className="font-bold text-white text-base">UDYAM-TN-02-0339397</span>
               </div>
             </div>
           </div>
@@ -101,28 +109,28 @@ export default function Footer({ setActiveSection, onOpenInvestModal, onOpenBroc
         </div>
 
         {/* Legal Disclaimer Divider & Text */}
-        <div className="pt-8 border-t border-gray-700/60 space-y-4">
-          <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+        <div className="pt-8 border-t border-white/6 space-y-4">
+          <p className="text-xs sm:text-[13px] text-gray-500 leading-relaxed">
             Investments are subject to market risks. Please read documents carefully before investing. Please consult a registered advisor or conduct personal research before making any investments. Past performance is not a guarantee of future return. The figures mentioned in the site must not be construed as guaranteed in nature.
           </p>
-          <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+          <p className="text-xs sm:text-[13px] text-gray-500 leading-relaxed">
             The company is not responsible for any consequences arising out of the advice/decisions made using the data/insight/information available on the Sai Shares platform. All terms, conditions & privacy policies are applicable as mentioned in the namesake sections.
           </p>
         </div>
 
         {/* Bottom Bar Divider, Copyright & Social Icons */}
-        <div className="pt-6 border-t border-gray-700/60 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
-            © 2026 Sai Shares. All rights reserved | <span className="text-gray-300 font-medium">CloudHawk</span>
+        <div className="pt-6 border-t border-white/6 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
+            © 2026 Sai Shares. All rights reserved | <span className="text-gray-400 font-medium">CloudHawk</span>
           </div>
 
-          {/* Social Icon — Instagram Only */}
+          {/* Social Icon — Instagram */}
           <div className="flex items-center gap-3">
             <a 
               href="https://www.instagram.com/saishares_hedgefund" 
               target="_blank" 
               rel="noreferrer" 
-              className="w-9 h-9 rounded-lg border border-white/40 flex items-center justify-center text-white hover:border-[#c68d37] hover:text-[#c68d37] transition-all"
+              className="w-10 h-10 rounded-xl border border-white/10 bg-white/4 flex items-center justify-center text-gray-400 hover:border-[#c68d37]/40 hover:text-[#c68d37] hover:bg-[#c68d37]/8 transition-all duration-300"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
