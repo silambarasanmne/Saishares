@@ -46,9 +46,9 @@ export default function Hero({ onOpenInvestModal, onOpenBrochureModal }) {
           style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}
         >
           <img
-            src="/images/sai-shares-logo.png"
+            src="/images/homesai.png"
             alt="Sai Shares — WeGrowTogether"
-            className="h-48 sm:h-56 md:h-64 w-auto object-contain mx-auto select-none"
+            className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[480px] h-auto object-contain mx-auto select-none"
             draggable="false"
           />
         </div>
