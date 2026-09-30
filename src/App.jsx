@@ -5,7 +5,7 @@ import StatsSection from './components/StatsSection';
 import TrustedGrowth from './components/TrustedGrowth';
 import ServiceCards from './components/ServiceCards';
 import InvestorGuidance from './components/InvestorGuidance';
-import VideoSection from './components/VideoSection';
+
 import SuperiorityBanner from './components/SuperiorityBanner';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
@@ -53,8 +53,7 @@ export default function App() {
         {/* Investor Guidance Section & Candlestick Stock Chart */}
         <InvestorGuidance />
 
-        {/* Share Market Educational Videos Section */}
-        <VideoSection />
+
 
         {/* Superiority Grid Dark Banner */}
         <SuperiorityBanner onOpenInvestModal={handleOpenInvestModal} />

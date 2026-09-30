@@ -16,7 +16,6 @@ export default function Header({
     { name: 'Who We Are', href: '#who-we-are' },
     { name: 'What We Do', href: '#what-we-do' },
     { name: 'Investment Guide', href: '#investment-guide' },
-    { name: 'Market Videos', href: '#videos' },
     { name: 'Brochure', href: '#brochure', isBrochure: true },
     { name: 'To Invest', href: '#to-invest', isCta: true },
   ];
